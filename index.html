@@ -87,6 +87,14 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 footer{text-align:center;padding:32px;font-size:13px;color:var(--muted)}
 footer a{color:var(--brand);text-decoration:none}
 @media(max-width:600px){.topic{flex-direction:column;gap:10px}.xp-chip{margin-left:0}.nav-tabs{gap:6px}.nav-tab{padding:8px 14px;font-size:13px}}
+
+.category-test{background:linear-gradient(135deg,#1e3a5f,#0f2447);border-radius:var(--radius);padding:0;margin:32px 0 8px 0;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.18)}
+.cat-test-header{display:flex;align-items:center;gap:20px;padding:24px 28px}
+.cat-test-icon{font-size:36px;flex-shrink:0}
+.cat-test-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:4px}
+.cat-test-sub{font-size:13px;color:rgba(255,255,255,.65)}
+.btn-cattest{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;border:none;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;margin-left:auto;flex-shrink:0;transition:transform .15s,box-shadow .15s}
+.btn-cattest:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(245,158,11,.5)}
 </style>
 </head>
 <body>
@@ -458,7 +466,18 @@ footer a{color:var(--brand);text-decoration:none}
       </div>
     </div>
 
-  </div><!-- end subsection -->
+  
+  <div class="category-test">
+    <div class="cat-test-header">
+      <span class="cat-test-icon">&#127942;</span>
+      <div>
+        <div class="cat-test-title">Partner Center &mdash; Category Knowledge Test</div>
+        <div class="cat-test-sub">Covers onboarding, user rights &amp; Azure Portal access. 15 questions &bull; ~8 min</div>
+      </div>
+      <button class="btn btn-cattest" onclick="openQuiz('pcFinalTest')">&#129504; Take the Test</button>
+    </div>
+  </div>
+</div><!-- end subsection -->
 </section>
 <!-- ===== WETRANSACT PORTAL ===== -->
 <section class="cat" id="cat-wt">
@@ -730,7 +749,18 @@ footer a{color:var(--brand);text-decoration:none}
       </div>
     </div>
 
-  </div><!-- end subsection -->
+  
+  <div class="category-test">
+    <div class="cat-test-header">
+      <span class="cat-test-icon">&#127942;</span>
+      <div>
+        <div class="cat-test-title">WeTransact Portal &mdash; Category Knowledge Test</div>
+        <div class="cat-test-sub">Covers offers, plans, purchases &amp; finance. 15 questions &bull; ~8 min</div>
+      </div>
+      <button class="btn btn-cattest" onclick="openQuiz('wtFinalTest')">&#129504; Take the Test</button>
+    </div>
+  </div>
+</div><!-- end subsection -->
 </section>
 <!-- ===== GTM ===== -->
 <section class="cat" id="cat-gtm">
@@ -862,7 +892,18 @@ footer a{color:var(--brand);text-decoration:none}
       </div>
     </div>
 
-  </div><!-- end subsection -->
+  
+  <div class="category-test">
+    <div class="cat-test-header">
+      <span class="cat-test-icon">&#127942;</span>
+      <div>
+        <div class="cat-test-title">Go-To-Market &mdash; Category Knowledge Test</div>
+        <div class="cat-test-sub">Covers co-sell, MACC, CRM &amp; support. 12 questions &bull; ~6 min</div>
+      </div>
+      <button class="btn btn-cattest" onclick="openQuiz('gtmFinalTest')">&#129504; Take the Test</button>
+    </div>
+  </div>
+</div><!-- end subsection -->
 </section>
 
 </main>
@@ -1038,6 +1079,273 @@ const quizzes = {
         opts: ["Only the customer's name","Full context: what the customer did, what happened, any error messages, screenshots, and what you already tried","Just the error message","A promise of a resolution time to the customer"],
         correct: 1,
         exp: "Never escalate empty-handed. Always include: customer name, steps to reproduce, error messages, screenshots if possible, and everything you have already tried."
+      }
+    ]
+  },
+  pcFinalTest: {
+    title: "&#127942; Partner Center &mdash; Final Knowledge Test",
+    questions: [
+      {
+        q: "What is the very first step an SDC must complete before they can publish listings on Microsoft Marketplace?",
+        opts: ["Create a Private Offer in WeTransact","Register as a Microsoft Partner and gain access to Partner Center","Set up the Finance Tab in the WeTransact portal","Invite external users in Azure Portal"],
+        a: 1,
+        exp: "Registering as a Microsoft Partner and gaining access to Partner Center is the mandatory first step. Without this, no listings can be published."
+      },
+      {
+        q: "What type of account is required to use Partner Center?",
+        opts: ["A personal Microsoft account (e.g. @outlook.com)","A Google Workspace account","A Microsoft Work Account (Azure AD / Entra ID)","Any email address registered on microsoft.com"],
+        a: 2,
+        exp: "Partner Center requires a Microsoft Work Account (Azure AD / Entra ID account) linked to the SDC's tenant."
+      },
+      {
+        q: "Why must WeTransact be given access in Partner Center?",
+        opts: ["So WeTransact can view the SDC's bank account details","To authorise WeTransact as a multi-party publisher so listings can be managed from the WeTransact portal","To allow WeTransact to submit support tickets on the SDC's behalf","To sync the SDC's Outlook calendar with Partner Center"],
+        a: 1,
+        exp: "WeTransact must be authorised as a multi-party publisher so it can manage listings on behalf of the SDC from the WeTransact portal. This is the #1 onboarding blocker."
+      },
+      {
+        q: "What is a 'non-actionable' Global Admin in Partner Center?",
+        opts: ["A Global Admin whose MFA has expired","A Global Admin account that has not been verified with the correct role, so it cannot take any actions in Partner Center","A Global Admin who has read-only access","A Global Admin outside the EU who can only view reports"],
+        a: 1,
+        exp: "A non-actionable Global Admin cannot perform any actions in Partner Center because the account has not been elevated to actionable status. This is a very frequent onboarding blocker."
+      },
+      {
+        q: "A customer says 'I can't do anything in Partner Center'. What is the most likely cause?",
+        opts: ["Their Payout and Tax Profile is incomplete","They have a non-actionable Global Admin","Their MPN ID is missing","They need to sync listings first"],
+        a: 1,
+        exp: "'My Global Admin can't do anything in Partner Center' almost always means a non-actionable Global Admin — this is the most common cause."
+      },
+      {
+        q: "How long can Payout and Tax Profile verification take in Partner Center?",
+        opts: ["A few minutes","Up to 1 hour","24 to 48 hours","Up to 7 business days"],
+        a: 2,
+        exp: "Tax profile verification can take 24-48 hours. Always set this expectation with customers upfront to prevent unnecessary follow-up tickets."
+      },
+      {
+        q: "What is the MPN ID used for?",
+        opts: ["It is the unique identifier for each Marketplace listing","It is the Microsoft Partner Network ID required for several platform configurations","It is the billing account number shown on invoices","It is the Tenant ID used to target Private Plans"],
+        a: 1,
+        exp: "The MPN ID (Microsoft Partner Network ID) is needed for several platform configurations and can be found inside Partner Center."
+      },
+      {
+        q: "Which role must a user have to manage co-sell solutions in Partner Center?",
+        opts: ["Any Partner Center user role is sufficient","A specific co-sell user right must be assigned — not all Partner Center roles include this","Only the Global Admin can manage co-sell solutions","The Billing Administrator role covers co-sell management"],
+        a: 1,
+        exp: "There are specific user rights required to manage co-sell solutions in Partner Center. Not all roles include this — the correct rights must be explicitly assigned."
+      },
+      {
+        q: "A customer needs to transfer Owner status to a new contact. What guide covers this?",
+        opts: ["How to verify the level of user rights","How to enrol in programs on Partner Center","How do I update Owner status in Partner Centre","How to add a location and publisher account"],
+        a: 2,
+        exp: "The guide 'How do I update Owner status in Partner Centre' covers transferring or updating Owner status — often needed when a key contact leaves the SDC."
+      },
+      {
+        q: "What happens if there are legal profile errors in Partner Center?",
+        opts: ["Listings are automatically hidden from search but still visible by direct URL","Legal profile issues often block publishing entirely","Payments are delayed by 30 days","The SDC's MPN ID is revoked"],
+        a: 1,
+        exp: "Legal profile issues — such as mismatched business names or pending verification — often block publishing entirely and must be resolved as a priority."
+      },
+      {
+        q: "What is the purpose of the Entra Application Roles check?",
+        opts: ["To verify which listings are published in the Marketplace","To confirm that the correct Entra Application Roles are assigned, which is essential for troubleshooting WeTransact portal access issues","To check the SDC's Azure subscription spending limits","To view the SDC's invoice history in Partner Center"],
+        a: 1,
+        exp: "Checking Entra Application Roles confirms the correct roles are assigned in Azure AD — essential for diagnosing WeTransact portal access issues."
+      },
+      {
+        q: "A Global Admin wants to assign themselves as Subscription Owner in Azure but has no prior access. Is this possible?",
+        opts: ["No, they need an existing Owner to delegate access first","Yes, a Global Admin can elevate their own access in Azure to assign themselves as Subscription Owner","Yes, but only by raising a Microsoft Support Request","No, subscription ownership can only be assigned by Microsoft directly"],
+        a: 1,
+        exp: "A Global Admin can elevate their own access in Azure Portal to assign themselves as Subscription Owner even without prior access. This is a powerful but safe operation."
+      },
+      {
+        q: "Why would you need to delete and re-add Support and Bot accounts in Partner Center?",
+        opts: ["To refresh the listings sync","When the accounts get into a broken state and need to be reset","To update the MPN ID","To change the publisher account location"],
+        a: 1,
+        exp: "When Support or Bot accounts break in Partner Center, the fix is to delete and re-add them. This resets the accounts safely without affecting listings."
+      },
+      {
+        q: "What is the first thing to check when diagnosing any access-related issue in Partner Center?",
+        opts: ["The MPN ID in the account settings","The user's current permission level and user rights","The Payout and Tax Profile status","The listing sync status in WeTransact"],
+        a: 1,
+        exp: "Checking what permissions a specific user has in Partner Center — their user rights level — is always the first diagnostic step for any access-related issue."
+      },
+      {
+        q: "What should you do when a customer needs an external user added to Partner Center but you can't find the Global Admin?",
+        opts: ["Ask the customer to create a new Global Admin account","Use the guide 'Find your Global Admin to add an external user on Partner Center' to locate who holds the Global Admin role","Raise a Microsoft Support Request to add the user directly","Skip the step and add the user as a Contributor instead"],
+        a: 1,
+        exp: "The guide 'Find your Global Admin to add an external user on Partner Center' helps locate the Global Admin in the customer's organisation so they can complete the action."
+      }
+    ]
+  },
+  wtFinalTest: {
+    title: "&#127942; WeTransact Portal &mdash; Final Knowledge Test",
+    questions: [
+      {
+        q: "What are Private Offers and why are they important?",
+        opts: ["Templates for creating public listings on the Marketplace","Custom deals with negotiated pricing for specific customers — approximately 90% of significant Marketplace revenue flows through them","A type of SaaS trial that customers can activate for free","Offers that are only visible to Microsoft internal employees"],
+        a: 1,
+        exp: "Private Offers are custom deals with negotiated pricing targeted at specific customers. Roughly 90% of significant Marketplace revenue flows through Private Offers — mastering this flow is essential."
+      },
+      {
+        q: "What is the difference between a Private Offer and a Private Plan?",
+        opts: ["There is no practical difference — they are the same thing","A Private Plan is a restricted pricing tier visible only to specific tenants, while a Private Offer is a custom deal sent directly to a customer","A Private Offer requires a CSP, while a Private Plan does not","A Private Plan is for SaaS products only; Private Offers work for all product types"],
+        a: 1,
+        exp: "A Private Plan is a restricted pricing tier visible only to specific tenants (requiring a Tenant ID to target). A Private Offer is a custom deal sent directly to a specific customer."
+      },
+      {
+        q: "A customer says they can't find their Private Offer. Where should you direct them?",
+        opts: ["The WeTransact portal Dashboard page","Their Marketplace Invoices section in Azure Portal","The Private Offers section in the WeTransact portal and in Partner Center","Their Azure subscription billing overview"],
+        a: 2,
+        exp: "Private Offers live in the Private Offers section of the WeTransact portal and in Partner Center. This is a very common question from new SDC users."
+      },
+      {
+        q: "What information does a customer need to provide when an SDC creates a Private Plan for them?",
+        opts: ["Their billing email address and country","Their Tenant ID from Azure Portal","Their MPN ID from Partner Center","Their subscription ID and resource group name"],
+        a: 1,
+        exp: "The Tenant ID is required to target a Private Plan at a specific customer. Customers can find their Tenant ID in Azure Portal."
+      },
+      {
+        q: "What is the correct order of stages for a Marketplace order?",
+        opts: ["Active -> Pending Acceptance -> Draft -> Purchased","Draft -> Pending Acceptance -> Accepted -> Purchased -> Active","Pending Acceptance -> Draft -> Active -> Purchased","Purchased -> Active -> Pending Acceptance -> Accepted"],
+        a: 1,
+        exp: "Orders move through: Draft -> Pending Acceptance -> Accepted -> Purchased -> Active. Use the Kanban board in the WeTransact portal to manage these stages."
+      },
+      {
+        q: "How is creating a Private Offer for a CSP different from a standard Private Offer?",
+        opts: ["There is no difference — the process is identical","The CSP offer process is slightly different and requires selecting CSP as the channel type","CSP offers cannot be created through WeTransact — they must be done directly in Partner Center","CSP offers do not require a Tenant ID"],
+        a: 1,
+        exp: "Creating a Private Offer for a CSP (Cloud Solution Provider/reseller) differs slightly from standard customer offers — the process requires selecting CSP as the channel type."
+      },
+      {
+        q: "Where can the Billing ID be found?",
+        opts: ["In the SDC's Payout and Tax Profile in Partner Center","In the WeTransact portal and Azure Portal — it is required when creating certain offer types","In the Microsoft Entra admin center under App Registrations","In the SDC's MPN profile page"],
+        a: 1,
+        exp: "The Billing ID can be found in the WeTransact portal and Azure Portal, and is required when creating certain offer types."
+      },
+      {
+        q: "After purchasing a SaaS solution on the Marketplace, what must the customer do in Azure Portal?",
+        opts: ["Immediately cancel the old subscription to avoid double billing","Configure their SaaS account — without this step the subscription may not activate correctly","Add a payment method before the solution becomes available","Invite WeTransact as an external user to their Azure tenant"],
+        a: 1,
+        exp: "After purchasing, customers must configure their SaaS account in Azure Portal. Walking customers through this step prevents many activation-related tickets."
+      },
+      {
+        q: "A customer wants to stop a listing but isn't sure of the difference between hiding it and stopping distribution. What covers this?",
+        opts: ["The Private Plan guide","The Finance Tab setup guide","The 'How to stop distribution of a Listing' guide, which covers hiding vs stopping distribution vs permanently delisting","The Marketplace listing status guide"],
+        a: 2,
+        exp: "The 'How to stop distribution of a Listing' guide explains the difference between hiding, stopping distribution, and permanently delisting."
+      },
+      {
+        q: "What is the Finance Tab in the WeTransact portal used for?",
+        opts: ["Managing user permissions and roles in Partner Center","Raising Azure Support Requests for billing issues","Giving SDCs visibility into revenue, payouts, and reports","Configuring the SaaS landing page URL"],
+        a: 2,
+        exp: "The Finance Tab gives SDCs visibility into revenue, payouts, and reports. If a customer says 'I can't see my payouts', the Finance Tab setup is the first place to investigate."
+      },
+      {
+        q: "How does an SDC change the Billing Region in Azure Marketplace?",
+        opts: ["By contacting Microsoft Billing Support — it cannot be self-served","Through the 'How do I change the Billing Region' guide — it affects payment methods and currency","By deleting and recreating their Azure subscription","Through the WeTransact portal Finance Tab settings"],
+        a: 1,
+        exp: "The Billing Region can be changed in Azure Marketplace and affects available payment methods and currency. There are important things to watch out for during this process."
+      },
+      {
+        q: "A customer's Finance Tab credentials have expired. What should you do?",
+        opts: ["Delete the Finance Tab and set it up from scratch","Use the 'How to update credentials for the Finance Tab' guide to update them without losing historical data","Create a new WeTransact portal account for the SDC","Reset the Publisher ID name to trigger a re-authentication"],
+        a: 1,
+        exp: "When Finance Tab credentials expire, they can be updated in the WeTransact portal without losing historical data using the dedicated credentials update guide."
+      },
+      {
+        q: "When should a customer raise an Azure Support Request for invoice payment?",
+        opts: ["Always — all invoice disputes must go through Microsoft Support","When billing issues escalate beyond self-service, such as incorrect charges or failed payments","Only when the invoice total exceeds $10,000","Only when the SDC's payment method has been declined three times"],
+        a: 1,
+        exp: "An Azure Support Request for invoice payment should be raised when billing issues escalate beyond self-service — for example, incorrect charges or failed payment processing."
+      },
+      {
+        q: "What information is available in the order details section of Partner Center?",
+        opts: ["Only the total order value and date","Full details including buyer info, plan selected, and transaction ID — needed for billing disputes and reconciliation","Only the listing name and customer country","The shipping address and delivery tracking number"],
+        a: 1,
+        exp: "Full order details — buyer info, plan selected, transaction ID — are available in Partner Center and are needed for billing disputes and reconciliation."
+      },
+      {
+        q: "What is the customer-facing flow when accepting a Private Offer?",
+        opts: ["Customer logs into WeTransact portal and accepts from the dashboard","Customer receives offer email, clicks Accept, signs in with Microsoft account, confirms the deal","Customer accepts via their Azure subscription billing page","Customer calls Microsoft to confirm acceptance by phone"],
+        a: 1,
+        exp: "The customer flow is: receive offer email -> click Accept -> sign in with Microsoft account -> confirm the deal. Knowing this flow lets you guide confused customers step by step."
+      }
+    ]
+  },
+  gtmFinalTest: {
+    title: "&#127942; Go-To-Market &mdash; Final Knowledge Test",
+    questions: [
+      {
+        q: "What is Co-Sell with Microsoft and why does it matter?",
+        opts: ["A program for SDCs to get free Azure credits for development","A way for SDCs to register deals with Microsoft and sell together with Microsoft Account Executives, unlocking larger enterprise budgets","A Microsoft certification program for Partner Center administrators","A tool for SDCs to create marketing content on Microsoft AppSource"],
+        a: 1,
+        exp: "Co-Sell lets SDCs register deals with Microsoft and sell alongside Microsoft Account Executives. This can unlock significantly larger enterprise budgets that the SDC couldn't access alone."
+      },
+      {
+        q: "What is MACC and why do customers love it?",
+        opts: ["A Microsoft support ticket escalation programme for critical issues","Microsoft Azure Consumption Commitment — a pre-committed Microsoft budget enterprise customers can spend on Marketplace software","A certification badge shown on AppSource listings","A tool for generating co-sell opportunity reports"],
+        a: 1,
+        exp: "MACC (Microsoft Azure Consumption Commitment) is a pre-committed Azure budget that enterprise customers can use to purchase Marketplace software. Understanding this is 80% of why customers love WeTransact."
+      },
+      {
+        q: "What is SpendMyMACC?",
+        opts: ["A WeTransact tool that helps buyers find and use their MACC budget on Marketplace software","A Microsoft portal for tracking Azure spending commitments","A CSP billing dashboard for tracking reseller margins","A CRM plugin for syncing MACC deals with Salesforce"],
+        a: 0,
+        exp: "SpendMyMACC is WeTransact's tool that helps buyers find Marketplace software they can purchase using their MACC (Azure Consumption Commitment) budget."
+      },
+      {
+        q: "What is the role of CSPs (Cloud Solution Providers) in the Microsoft ecosystem?",
+        opts: ["CSPs are Microsoft employees who manage the Partner Center portal","CSPs are resellers in Microsoft's ecosystem who can sell Marketplace products to their customers","CSPs are Microsoft-certified developers who build Azure integrations","CSPs are Microsoft support agents assigned to enterprise customers"],
+        a: 1,
+        exp: "CSPs are resellers in Microsoft's ecosystem who can sell Marketplace products to their customers. SDCs can create Private Offers specifically targeted at CSPs."
+      },
+      {
+        q: "What is Crossbeam used for?",
+        opts: ["Tracking Azure resource consumption for cost optimisation","An account-mapping integration that finds overlapping customers between SDCs and their partners","A CRM tool for managing support ticket workflows","A reporting dashboard for Marketplace payout reconciliation"],
+        a: 1,
+        exp: "Crossbeam is an account-mapping integration that identifies overlapping customers between SDCs and their partners — useful for co-sell coordination."
+      },
+      {
+        q: "A customer says their outreach campaign emails aren't sending. What is the most likely cause?",
+        opts: ["The Marketplace listing has been stopped and must be reactivated","Missing verified sender domains or hitting Microsoft AE list limits","The SDC's Finance Tab credentials have expired","The CRM sync with HubSpot has failed"],
+        a: 1,
+        exp: "Most 'emails not sending' issues are caused by missing verified sender domains or hitting Microsoft AE list limits — these are the most common outreach campaign problems."
+      },
+      {
+        q: "What is Deal Registration with Microsoft and what does it unlock?",
+        opts: ["A process to register new listings before they go live on AppSource","How SDCs indicate intent to close a deal with Microsoft, giving them priority support from AEs and unlocking co-sell incentives","A legal contract between the SDC and Microsoft for reseller rights","A way for SDCs to claim exclusive rights to a customer account"],
+        a: 1,
+        exp: "Deal Registration signals to Microsoft that an SDC intends to close a deal. This gives priority support from Microsoft AEs and unlocks co-sell incentives."
+      },
+      {
+        q: "An SDC says their HubSpot CRM sync with WeTransact is running slowly. What is the most likely cause?",
+        opts: ["The SDC's Marketplace listing has too many Private Offers attached","HubSpot has hourly API rate limits — if an SDC says the sync is slow, rate limits are usually the reason","The Finance Tab credentials need to be updated","The SDC needs to re-authorise the WeTransact app in Azure Portal"],
+        a: 1,
+        exp: "HubSpot has hourly API limits. If an SDC reports slow CRM sync, API rate limits are almost always the cause."
+      },
+      {
+        q: "What is Capchase and when would you recommend it?",
+        opts: ["A Microsoft tool for managing Azure reserved instance pricing","A built-in WeTransact option that lets SDCs get paid upfront instead of waiting for Microsoft's 30-60 day payout cycle — ideal for cash-flow-conscious publishers","A CSP billing reconciliation tool for high-volume resellers","An automated outreach campaign platform built into Partner Center"],
+        a: 1,
+        exp: "Capchase lets SDCs get paid upfront instead of waiting for Microsoft's 30-60 day payout cycle. It's great for cash-flow-conscious publishers who need liquidity faster."
+      },
+      {
+        q: "What is the correct 5-step process for handling a support ticket?",
+        opts: ["Google it, try a fix, escalate if it takes more than 10 minutes","Read it twice, reproduce or ask for a screenshot, check docs.wetransact.io, try to solve it, escalate with full context if stuck","Reply immediately with a workaround, then investigate later","Escalate to engineering first, then update the customer"],
+        a: 1,
+        exp: "The 5-step process: 1) Read it twice. 2) Reproduce or ask for a screenshot. 3) Check docs.wetransact.io. 4) Try to solve it. 5) If stuck, escalate with full context. Never escalate empty-handed."
+      },
+      {
+        q: "Where should you escalate a suspected Partner Center outage?",
+        opts: ["Internal Slack #support channel","Microsoft support","WeTransact engineering via Linear","The customer's Global Admin"],
+        a: 1,
+        exp: "Partner Center outages should be escalated to Microsoft support. Platform bugs go to engineering via Linear. Billing disputes go to the finance team."
+      },
+      {
+        q: "In what order should you use these resources when looking for technical answers?",
+        opts: ["Internal Slack first, then docs.wetransact.io, then in-app help","docs.wetransact.io first, then the in-app help menu, then internal Slack #support channel","Google first, then internal Slack, then docs.wetransact.io","In-app help first, then Google, then internal Slack"],
+        a: 1,
+        exp: "The correct order is: docs.wetransact.io (first stop) -> in-app help menu (second) -> internal Slack #support channel (third). Use them in this order every time."
       }
     ]
   }
