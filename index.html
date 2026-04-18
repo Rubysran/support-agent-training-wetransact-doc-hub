@@ -1106,19 +1106,16 @@ let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
 function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
 
 function updateProgress() {
-  // Include topics from ALL sections, even hidden ones
-  const allCats = document.querySelectorAll('.cat');
-  const origDisplay = [];
-  allCats.forEach((c,i) => { origDisplay[i] = c.style.display; c.style.display='block'; });
-  const topics = document.querySelectorAll('.topic');
+  // Count ALL topics using state keys (works regardless of visibility)
+  const allTopics = document.querySelectorAll('[data-id]');
   let done = 0, xp = 0, totalXP = 0;
-  topics.forEach(t => {
+  allTopics.forEach(t => {
+    if (!t.dataset.xp) return;
     const txp = parseInt(t.dataset.xp || 0);
     totalXP += txp;
     if (state[t.dataset.id]) { done++; xp += txp; }
   });
-  allCats.forEach((c,i) => { c.style.display = origDisplay[i] || (c.classList.contains('active') ? 'block' : 'none'); });
-  const total = topics.length;
+  const total = allTopics.length;
   const pct = total ? Math.round((done / total) * 100) : 0;
   document.getElementById('progressText').textContent = done === total && total > 0 ? '\uD83C\uDF89 All done!' : "Let's go! " + done + ' of ' + total + ' complete';
   document.getElementById('progressPct').textContent = pct + '%';
