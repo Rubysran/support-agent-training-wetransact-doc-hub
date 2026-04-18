@@ -1,4 +1,3 @@
-x
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -485,6 +484,12 @@ footer a:hover{color:var(--pink)}
   line-height:1.5;display:flex;align-items:flex-start;gap:10px;
 }
 .octavia-tip .oct-icon{font-size:22px;flex-shrink:0;animation:tentacleWiggle 3s ease infinite}
+
+/* ── Nav tab pill styles ── */
+.nav-tabs{display:flex;flex-direction:row;gap:10px;align-items:center;flex-wrap:wrap;}
+.nav-tab{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.2);border-radius:50px;color:rgba(255,255,255,0.7);font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s ease;white-space:nowrap;letter-spacing:0.01em;}
+.nav-tab:hover{background:rgba(130,102,244,0.3);border-color:rgba(130,102,244,0.6);color:#fff;}
+.nav-tab.active{background:linear-gradient(135deg,#8266F4,#5949C1);border-color:#8266F4;color:#fff;box-shadow:0 4px 14px rgba(130,102,244,0.4);}
 </style>
 </head>
 <body>
@@ -516,57 +521,47 @@ footer a:hover{color:var(--pink)}
   <div class="header-inner">
     <div class="header-octavia">
       <!-- Octavia SVG - WeTransact's magical purple octopus mascot -->
-      <svg width="140" height="160" viewBox="0 0 140 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 8px 24px rgba(130,102,244,.6));animation:tentacleWiggle 3s ease-in-out infinite">
-        <!-- Sparkles around Octavia -->
-        <text x="110" y="30" font-size="16" opacity="0.8" style="animation:sparkle 2s .5s infinite">&#10024;</text>
-        <text x="5" y="50" font-size="14" opacity="0.7" style="animation:sparkle 2s 1s infinite">&#11088;</text>
-        <text x="115" y="90" font-size="12" opacity="0.6" style="animation:sparkle 2s 1.5s infinite">&#10022;</text>
-        <!-- Body -->
-        <ellipse cx="70" cy="72" rx="40" ry="42" fill="#8266F4"/>
-        <ellipse cx="70" cy="72" rx="36" ry="38" fill="#9B7FF7"/>
-        <!-- Highlight sheen -->
-        <ellipse cx="60" cy="58" rx="14" ry="10" fill="rgba(255,255,255,0.18)" transform="rotate(-15,60,58)"/>
-        <!-- Eyes background -->
-        <ellipse cx="57" cy="65" rx="9" ry="10" fill="white"/>
-        <ellipse cx="83" cy="65" rx="9" ry="10" fill="white"/>
-        <!-- Sunglasses frame -->
-        <rect x="46" y="61" width="20" height="11" rx="5" fill="#021774" opacity="0.92"/>
-        <rect x="72" y="61" width="20" height="11" rx="5" fill="#021774" opacity="0.92"/>
-        <!-- Sunglasses bridge -->
-        <line x1="66" y1="66" x2="72" y2="66" stroke="#021774" stroke-width="2.5" opacity="0.92"/>
-        <!-- Sunglasses shine -->
-        <line x1="50" y1="63" x2="55" y2="63" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-        <line x1="76" y1="63" x2="81" y2="63" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-        <!-- Smile -->
-        <path d="M61 80 Q70 88 79 80" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <!-- Blush -->
-        <ellipse cx="50" cy="78" rx="6" ry="4" fill="#F36DC8" opacity="0.45"/>
-        <ellipse cx="90" cy="78" rx="6" ry="4" fill="#F36DC8" opacity="0.45"/>
-        <!-- WeTransact logo dot on body -->
-        <circle cx="70" cy="95" r="8" fill="rgba(255,255,255,0.15)"/>
-        <text x="65" y="100" font-size="10" fill="white" font-weight="bold" font-family="sans-serif">W</text>
-        <!-- Tentacles -->
-        <path d="M36 108 Q28 120 32 134 Q28 140 22 138" stroke="#8266F4" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <path d="M48 118 Q38 132 42 148 Q38 154 32 152" stroke="#9B7FF7" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <path d="M60 122 Q56 138 60 152 Q58 158 52 158" stroke="#8266F4" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <path d="M72 124 Q72 140 74 154 Q72 160 68 159" stroke="#9B7FF7" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <path d="M84 122 Q88 138 86 152 Q88 158 94 156" stroke="#8266F4" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <path d="M96 116 Q104 130 102 146 Q106 152 112 150" stroke="#9B7FF7" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <!-- Tentacle tips (sucker dots) -->
-        <circle cx="22" cy="138" r="3" fill="#5949C1"/>
-        <circle cx="32" cy="152" r="3" fill="#5949C1"/>
-        <circle cx="52" cy="158" r="3" fill="#5949C1"/>
-        <circle cx="68" cy="159" r="3" fill="#5949C1"/>
-        <circle cx="94" cy="156" r="3" fill="#5949C1"/>
-        <circle cx="112" cy="150" r="3" fill="#5949C1"/>
-        <!-- Magic wand in one tentacle -->
-        <line x1="36" y1="108" x2="18" y2="90" stroke="#FFE163" stroke-width="3" stroke-linecap="round"/>
-        <polygon points="18,90 14,82 22,85" fill="#FFE163"/>
-        <circle cx="18" cy="90" r="4" fill="#FFE163" opacity="0.7"/>
-        <!-- Floating sparkles from wand -->
-        <text x="2" y="78" font-size="12" opacity="0.9">&#10024;</text>
-        <text x="22" y="68" font-size="10" opacity="0.7">&#11088;</text>
-      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 250 250" width="195" height="210" style="overflow:visible">
+  <g style="animation:sparkle 2s .3s infinite"><circle cx="183" cy="44" r="3.5" fill="#FFE163" opacity="0.95"/><circle cx="195" cy="31" r="2.5" fill="#FFE163" opacity="0.8"/><circle cx="173" cy="26" r="2" fill="#FFE163" opacity="0.7"/><circle cx="200" cy="50" r="2" fill="#FFE163" opacity="0.75"/><circle cx="205" cy="35" r="3" fill="#FFE163" opacity="0.85"/></g>
+  <line x1="60" y1="138" x2="18" y2="90" stroke="#2d1810" stroke-width="8" stroke-linecap="round"/>
+  <polygon points="10,73 14,87 28,87 17,96 22,110 10,102 -2,110 3,96 -8,87 6,87" fill="#FFE163"/>
+  <polygon points="10,79 13,88 21,88 15,94 17,102 10,98 3,102 5,94 -1,88 7,88" fill="white" opacity="0.4"/>
+  <ellipse cx="175" cy="130" rx="30" ry="8" fill="#2a2075"/>
+  <rect x="149" y="68" width="52" height="62" rx="4" fill="#4040b0"/>
+  <rect x="149" y="112" width="52" height="14" fill="#FFE163"/>
+  <rect x="149" y="112" width="52" height="14" fill="#ec4899" opacity="0.55"/>
+  <rect x="147" y="65" width="56" height="7" rx="3" fill="#2a2075"/>
+  <g style="animation:sparkle 1.8s .5s infinite"><circle cx="175" cy="63" r="4" fill="#FFE163" opacity="0.9"/><circle cx="163" cy="58" r="3" fill="#FFE163" opacity="0.75"/><circle cx="187" cy="57" r="2.5" fill="#FFE163" opacity="0.8"/></g>
+  <path d="M 72 168 Q 53 190 49 211 Q 47 221 55 219 Q 61 217 62 206 Q 66 191 77 180" fill="#7c5cf0"/>
+  <path d="M 87 176 Q 72 201 70 220 Q 68 230 76 228 Q 82 226 81 215 Q 83 200 93 188" fill="#8266F4"/>
+  <path d="M 103 179 Q 97 207 98 226 Q 98 235 104 233 Q 110 231 108 220 Q 107 205 109 191" fill="#7c5cf0"/>
+  <path d="M 119 179 Q 128 205 125 224 Q 124 234 130 231 Q 135 228 132 218 Q 129 204 122 191" fill="#8266F4"/>
+  <path d="M 132 174 Q 148 196 150 214 Q 152 224 145 222 Q 140 220 139 210 Q 137 196 128 183" fill="#7c5cf0"/>
+  <path d="M 144 165 Q 165 184 167 204 Q 169 214 162 212 Q 157 210 156 200 Q 152 186 140 175" fill="#8266F4"/>
+  <path d="M 78 146 Q 58 138 46 126 Q 36 116 40 108 Q 45 101 53 110 Q 64 124 80 138" fill="#9B7FF7"/>
+  <path d="M 143 145 Q 158 133 168 118 Q 177 105 172 98 Q 167 91 158 101 Q 148 115 137 135" fill="#9B7FF7"/>
+  <path d="M 74 156 Q 55 161 45 167 Q 38 173 41 179 Q 45 185 55 181 Q 66 175 78 164" fill="#9B7FF7"/>
+  <path d="M 148 155 Q 167 159 178 165 Q 185 171 182 177 Q 179 183 169 179 Q 158 173 144 163" fill="#9B7FF7"/>
+  <ellipse cx="111" cy="150" rx="55" ry="44" fill="#8266F4"/>
+  <ellipse cx="98" cy="135" rx="20" ry="12" fill="rgba(255,255,255,0.12)" transform="rotate(-10,98,135)"/>
+  <ellipse cx="111" cy="110" rx="52" ry="54" fill="#8266F4"/>
+  <ellipse cx="111" cy="108" rx="49" ry="51" fill="#9B7FF7"/>
+  <ellipse cx="96" cy="88" rx="20" ry="13" fill="rgba(255,255,255,0.18)" transform="rotate(-15,96,88)"/>
+  <circle cx="105" cy="86" r="6" fill="#8266F4" opacity="0.4"/>
+  <circle cx="89" cy="104" r="4" fill="#8266F4" opacity="0.3"/>
+  <ellipse cx="97" cy="117" rx="13" ry="14" fill="white"/>
+  <ellipse cx="128" cy="117" rx="13" ry="14" fill="white"/>
+  <circle cx="99" cy="119" r="8.5" fill="#1a1240"/>
+  <circle cx="126" cy="119" r="8.5" fill="#1a1240"/>
+  <circle cx="103" cy="114" r="4" fill="white"/>
+  <circle cx="130" cy="114" r="4" fill="white"/>
+  <path d="M 86 111 Q 97 105 108 111" stroke="#9B7FF7" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M 119 111 Q 128 105 139 111" stroke="#9B7FF7" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="80" cy="129" rx="11" ry="7" fill="#F36DC8" opacity="0.5"/>
+  <ellipse cx="146" cy="129" rx="11" ry="7" fill="#F36DC8" opacity="0.5"/>
+  <circle cx="112" cy="131" r="3" fill="#1a1240" opacity="0.6"/>
+  <path d="M 100 140 Q 112 152 124 140" stroke="#1a1240" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>
     </div>
     <div class="header-text">
       <div class="header-label">WeTransact &middot; Support Team</div>
