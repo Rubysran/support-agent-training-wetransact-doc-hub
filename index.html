@@ -86,6 +86,10 @@ body::after{
   min-height:280px;
   display:flex;align-items:center;justify-content:center;
 }
+.header-bg{position:absolute;height:100%;width:auto;top:0;opacity:0.85;pointer-events:none;z-index:0;}
+.header-bg-left{left:0;transform:translateX(-20%);}
+.header-bg-right{right:0;transform:translateX(20%);}
+.header-inner{position:relative;z-index:1;}
 .header::before{
   content:'';
   position:absolute;inset:0;
@@ -518,21 +522,11 @@ footer a:hover{color:var(--pink)}
 
 <!-- HEADER -->
 <header class="header">
+  <img src="header-bg-1.png" alt="" class="header-bg header-bg-left" aria-hidden="true" />
+  <img src="header-bg-2.png" alt="" class="header-bg header-bg-right" aria-hidden="true" />
   <div class="header-inner">
     <div class="header-octavia">
-      <!-- WeTransact Logo -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="160" height="160" style="overflow:visible">
-        <!-- Outer circle background -->
-        <circle cx="100" cy="100" r="90" fill="#0a1f8f" opacity="0.95"/>
-        <!-- Inner glow ring -->
-        <circle cx="100" cy="100" r="90" fill="none" stroke="#8266F4" stroke-width="3" opacity="0.6"/>
-        <!-- W letter mark -->
-        <text x="100" y="80" font-family="Arial Black, sans-serif" font-size="52" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">W</text>
-        <!-- WeTransact wordmark -->
-        <text x="100" y="128" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#FFE163" text-anchor="middle" letter-spacing="1">WeTransact</text>
-        <!-- Tagline -->
-        <text x="100" y="150" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="rgba(255,255,255,0.7)" text-anchor="middle" letter-spacing="2">MARKETPLACE</text>
-      </svg>
+      <img src="wetransact-logo.png" alt="WeTransact Logo" width="160" height="160" style="border-radius:50%;animation:floatUp .8s ease both;" />
     </div>
     <div class="header-text">
       <div class="header-label">WeTransact &middot; Support Team</div>
